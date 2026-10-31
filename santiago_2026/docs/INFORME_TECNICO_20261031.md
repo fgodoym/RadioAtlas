@@ -118,7 +118,7 @@ parecido, se cortan limpio y la deriva entre relojes es pequeña.
 **No hay mediciones de Manizales.** Ninguno de los tres efectos medidos se puede afirmar ni descartar allí:
 - el desequilibrio de nivel y la cola dependen del parlante, la sala y la posición del micrófono;
 - la deriva es *relativa* entre el reloj del emisor y el de la interfaz de captura (en Manizales otra:
-  un comentario del código nombra una Roland R-07);
+  una consola Behringer con micrófono);
 - la saturación depende de la ganancia usada.
 
 Lo medido es que el detector original no tiene margen para ninguno de ellos. El nuevo los corrige
