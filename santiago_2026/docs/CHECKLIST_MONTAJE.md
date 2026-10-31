@@ -11,6 +11,7 @@ Todos los comandos se corren desde el Mac. Los que llevan `sudo` piden la contra
     - Tarjeta SD: un corte mientras escribe puede dañar archivos o el sistema. Apagar con `sudo poweroff` antes de desenchufar; llevar copia de la tarjeta de cada Pi.
     - Mitigación: internet estable; módulo RTC DS3231 en cada Pi; o enchufe con timer en lugar del horario por software; avisar al personal de sala.
 - [ ] **Resolver el apagado seguro en sala.** Hoy solo por SSH: `ssh -t qzzk@radioatlasreceptor.local 'sudo poweroff'` y `ssh -t qzzk@radioatlasemisor.local 'sudo poweroff'` (Tailscale: 100.72.213.62 / 100.91.50.45). Desenchufar cuando la luz verde queda apagada (~30 s). Para el personal de sala: pulsador de apagado por GPIO en cada Pi + instrucción impresa. Para prender: enchufar.
+- [ ] **Apagado y encendido automáticos.** La Pi 3 apagada no se prende sola (arranca al recibir corriente). Plan: poweroff programado 20:05 solo si NTP sincronizado; enchufe con timer corta 20:15 y devuelve 8:45; horario del emisor abierto y el real lo marca el timer. Pulsador GPIO3 (pin 5)–GND con `dtoverlay=gpio-shutdown`: apaga si está prendida, prende si está apagada sin desenchufar. Confirmar horario final.
 - [ ] Texto nuevo: mismo `frases.txt` en emisor (`~/rio_sstv/frases.txt`) y receptor (`~/frases.txt`), reiniciar ambos servicios. Cada frase ≤ 80 bytes UTF-8 (tildes y ñ = 2). La captura corta a 17 s (~90 bytes de texto). Las actuales: 20–73 bytes.
 - [ ] Prueba de reinicio completo de las dos Pi.
 - [ ] Opcional: receptor con `hw:CARD=ZEDi8,DEV=0` en vez de `hw:2,0`.
