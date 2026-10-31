@@ -144,7 +144,7 @@ Lista completa en [`santiago_2026/docs/CHECKLIST_MONTAJE.md`](santiago_2026/docs
 
 - [ ] Texto nuevo: el mismo `frases.txt` en las dos Pi (cada frase ≤ 80 bytes UTF-8)
 - [ ] Funcionar sin internet: módulo RTC DS3231 en cada Pi, apagado diario por horas desde el arranque, enchufe con timer
-- [ ] Apagado seguro en sala (pulsador GPIO3) — **nunca desenchufar sin apagar**
+- [ ] Apagado seguro en sala (pulsador GPIO17) — **nunca desenchufar sin apagar**
 - [ ] Wifi de la galería cargado en las dos Pi; vencimiento de clave de Tailscale desactivado
 - [ ] En la galería: ubicar micrófono, ajustar ganancia y medir el ambiente de las otras obras
 - [ ] Horario de la exhibición (hoy el emisor transmite 0:00–23:59)
