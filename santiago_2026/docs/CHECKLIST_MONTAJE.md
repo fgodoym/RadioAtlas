@@ -15,7 +15,7 @@ Todos los comandos se corren desde el Mac. Los que llevan `sudo` piden la contra
 - [ ] **Funcionar sin internet** (puede no haber o ser inestable). El FSK no usa la red. Sin internet se pierden hora, apagado por horario y acceso remoto. Plan: módulo RTC DS3231 en cada Pi (2; chip DS3231 no DS1307; módulo chico en pines 1–9, con pila; `dtoverlay=i2c-rtc,ds3231`); apagado diario por horas desde el arranque (timer prende 8:45 → apagado a las 11 h 20 min); horario del emisor abierto; acceso en sala por `.local` o cable directo; Tailscale reconecta solo.
 - [ ] Texto nuevo: mismo `frases.txt` en emisor (`~/rio_sstv/frases.txt`) y receptor (`~/frases.txt`), reiniciar ambos servicios. Cada frase ≤ 80 bytes UTF-8 (tildes y ñ = 2). La captura corta a 17 s (~90 bytes de texto). Las actuales: 20–73 bytes.
 - [ ] Prueba de reinicio completo de las dos Pi.
-- [ ] Opcional: receptor con `hw:CARD=ZEDi8,DEV=0` en vez de `hw:2,0`.
+- [ ] **Robustez del ZEDi8 y el USB** (sin datos de largo plazo): revisar `vcgencmd get_throttled` y cortes USB; probar desenchufar/reconectar el ZEDi8 en marcha (el servicio reintenta cada 3 s, no probado); usar `hw:CARD=ZEDi8,DEV=0` en vez de `hw:2,0`; chequeo automático que reinicie si no hay recepción por mucho tiempo; cable USB corto, fijado; fuente oficial 2.5 A por Pi.
 
 ## En la galería
 - [ ] Micrófono del receptor cerca del parlante FSK, apuntado a él y de espaldas a los parlantes de las otras obras (si se puede, cardioide).
